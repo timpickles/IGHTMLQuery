@@ -76,6 +76,12 @@ static void recursively_remove_namespaces_from_node(xmlNodePtr node)
     return [[self alloc] initWithXMLNode:node shouldFreeNode:shouldFreeNode];
 }
 
++ (id)nodeWithTag:(NSString *)tag {
+    xmlNodePtr newNode = xmlNewNode(0, (xmlChar*) [tag cStringUsingEncoding:NSUTF8StringEncoding]);
+
+    return [[IGXMLNode alloc] initWithXMLNode:newNode shouldFreeNode:YES];
+}
+
 -(void) dealloc {
     if (_node && _shouldFreeNode) {
         xmlFreeNode(_node);

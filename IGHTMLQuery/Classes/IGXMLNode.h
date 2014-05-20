@@ -44,4 +44,9 @@ extern NSString* const IGXMLQueryCSSConversionException;
  */
 + (id)nodeWithXMLNode:(xmlNodePtr)node;
 
+/**
+ Create a node using a string tag name
+ */
++ (id)nodeWithTag:(NSString *)tag;
+
 @end
