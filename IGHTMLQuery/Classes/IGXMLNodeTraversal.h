@@ -35,6 +35,11 @@
 - (IGXMLNodeSet*) children;
 
 /**
+@return get children elements, including text nodes, of current node as {{IGXMLNodeSet}}.
+*/
+- (IGXMLNodeSet *) childrenIncludingTextNodes;
+
+/**
  @return get first child element of current node. If no child exists, return nil.
  */
 - (IGXMLNode*) firstChild;
